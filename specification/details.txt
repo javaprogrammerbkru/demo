@@ -1,0 +1,35 @@
+git clone git@github.com:javaprogrammerbkru/demo.git
+
+add
+--spring.profiles.active=dev
+Run -> Edit configuration ... -> Modify Options -> Add VM options
+OR for maven from console
+
+export SPRING_PROFILES_ACTIVE=dev
+./mvnw clean spring-boot:run
+
+CREATE TABLE person (
+ id serial PRIMARY KEY,
+ first_name varchar(100),
+ last_name varchar(100)
+);
+
+
+delete from Person;
+insert into Person(first_name, last_name) values('11', '111111111111111');
+insert into Person(first_name, last_name) values('22', '222222222222222');
+insert into Person(first_name, last_name) values('33', '33333333333333');
+select * from Person;
+
+
+curl -X GET  localhost:8080/getAll -H 'Content-type:application/json'
+curl -X GET  localhost:8080/getAll
+
+curl -X POST localhost:8080/postNew -H 'Content-type:application/json' -d '{"id": "3", "firstName": "111", "lastName": "222"}'
+
+curl  http://localhost:8080
+
+curl -i -H "Content-Type:application/json" -d '{"name": "11"}' http://localhost:8080/people
+
+curl -X GET  localhost:8080/findAll
+curl -X GET  localhost:8080/testExc
